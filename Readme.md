@@ -70,5 +70,5 @@ CDN:
 ---
 
 ## DEMO
-https://2021-quarterly-trends-reports.netlify.app/
+https://charts-vanillajs.netlify.app
 ```
