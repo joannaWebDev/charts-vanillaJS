@@ -58,15 +58,6 @@ CDN:
 | `lavender blue dark`   |     |  **#cbbaed** |
 | `lavender blue light`  |     |  **#e5ddf6** |
 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-
-## Additional colors are specificed in the corresponding charts
-
-| Markdown | Less      | Pretty     |
-| -------- | --------- | ---------- |
-| _Still_  | `renders` | **nicely** |
-| 1        | 2         | 3          |
-
 ---
 
 ## DEMO
