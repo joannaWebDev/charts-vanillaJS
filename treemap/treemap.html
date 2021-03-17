@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treemap</title>
+  <link rel="icon" type="image/png" href="./../general_assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!--CDN-->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+  <!--STYLESHEET-->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+    }
+
+    html {
+      height: -webkit-fill-available;
+    }
+
+    body {
+      margin: 0 auto;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+      overflow-x: hidden;
+    }
+
+    #chart {
+      margin: 5% auto;
+      padding: 0 1%;
+      width: 800px;
+      /*TODO this makes the chart  unresponsive*/
+    }
+
+    .chart-container {
+      margin: 0 auto;
+    }
+
+    .top-charts {
+      margin: 5% auto;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .title h3 {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .chart-icon {
+      justify-content: flex-end;
+      text-align: right;
+    }
+
+    .methodology {
+      margin: 3% auto;
+    }
+
+    .methodology p {
+      font-size: 12px;
+      color: #7f7f7f;
+    }
+
+    @media only screen and (max-width: 600px) {
+
+      .top-charts {
+        flex-direction: column-reverse;
+      }
+
+      .title {
+        text-align: center;
+      }
+    }
+  </style>
+  <!--HTML-->
+  <div id="chart">
+    <div class="top-charts">
+      <div class="title">
+        <h3>Markets with API Security Incidences</h3>
+        <p>QA 2020 (N=34)</p>
+      </div>
+      <div class="chart-icon"> <a href="./../index.html" title="back to home" id="logo"> <img src="./../general_assets/img/logo.svg"
+        alt="platformable logo with blue letters and blue square" width="228px"/></a>
+      </div>
+      </div>
+
+    <div class="chart-container" style="position: relative; height:50vh;width: 800; ">
+      <div id="se_barinc" style="height:100%; position: relative;width: 800;"></div>
+    </div>
+
+    <div class="methodology">
+      <p><strong>Methodology</strong>: 182 fintechs reported subscription revenue as their primary source of revenue and
+        it was common among firms
+        offering accounting & budgeting, digital banking and account/API aggregation services. Fintechs have their
+        traditional revenue models through commissions, transactions, affiliation and interest when they are offering
+        financial services like payment, digital banking or lending services, however a large number of fintechs (268)
+        have ‘Unknown’ as their revenue model which reflects the value created through collaborations.
+        Since the openbanking standards enable the fintechs to collaborate with banks as well as build products using
+        bank
+        APIs, the revenue generated is shared among the fintechs and the banks. This could be a combination of different
+        revenue streams depending on the service which could range from commission-based, freemium and data-analytic
+        sales.</p>
+    </div>
+  </div>
+
+
+  <!--LIBRARY SCRIPT---->
+
+  <script type="text/javascript">
+    var dom = document.getElementById("se_barinc");
+    var myChart = echarts.init(dom);
+    var app = {};
+
+    var option;
+
+    option = {
+      series: [{
+        type: 'treemap',
+        //width: '800px',
+        //height: '100%',
+        sort: false,
+        roam: false,
+        breadcrumb: {
+          show: false,
+        },
+        /*FUNCTION when param is the darked purple, the text should be white*/
+        label: {
+          formatter: function (params) {
+            const style = params.color === '#1b014c' ? 'light' : 'dark';
+            return '{' + style + '|' + params.name + '\n' + params.value + '%' + '}'
+          },
+          color: '#1B014C',
+          fontFamily: 'Roboto',
+          fontSize: '12px',
+          fontWeight: 'bold',
+          align: 'left',
+          position: 'insideTopLeft',
+          rich: {
+            light: {
+              color: '#fff',
+              fontWeight: 'bold',
+            }
+          },
+        },
+        levels: [{
+          itemStyle: {
+            normal: {
+              borderWidth: 1,
+              borderColor: '#fff',
+              gapWidth: 2,
+            }
+          }
+        }],
+        data: [
+          {
+            id: 'id-1',
+            name: 'IT\n12',
+            value: 35.3,
+            itemStyle: {
+              color: '#fb50124d'
+            }
+
+          }, {
+            id: 'id-2',
+            name: 'Healthcare\n4',
+            value: 11.8,
+            itemStyle: {
+              color: '#ffd23f4d'
+            }
+          },
+          {
+            id: 'id-3',
+            name: 'Online Game\n3',
+            value: 8.8,
+            itemStyle: {
+              color: '#cbbaed4d',
+            }
+          },
+          {
+            id: 'id-4',
+            name: 'Tourism\n3',
+            value: 8.8,
+            itemStyle: {
+              color: '#4695564d'
+            }
+          },
+          {
+            id: 'id-5',
+            name: 'Open banking\n3',
+            value: 8.8,
+            itemStyle: {
+              color: '#1b014c'
+            }
+          },
+          {
+            id: 'id-6',
+            name: 'Manufacturing\n2',
+            value: 5.9,
+            itemStyle: {
+              color: '#01fdf64d'
+            }
+          },
+          {
+            id: 'id-7',
+            name: 'Others\n7',
+            value: 20.6,
+            itemStyle: {
+              color: '#6666664d'
+            }
+          },
+        ]
+      }]
+    };
+
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+  </script>
+</body>
+
+</html>
+
+<!--IMPORTANT
+
+COLORS 30%  
+IT #fb5012
+HEALTHCARE #ffd23f4d
+TOURISM #4695564d
+ONLINE GAME #cbbaed4d
+OPEN BANKING #1b014c4d
+MANUFACTURING #01fdf64d
+OTHERS  #6666664d
+-->

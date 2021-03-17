@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  height: -webkit-fill-available;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0 auto;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  overflow-x: hidden;
+}
+
+#chart {
+  margin: 5% auto;
+  padding: 0 5%;
+  width: 942px; /*THIS GIVES THE CHART EXACTLY 800PX*/
+}
+
+.chart-container {
+  margin: 0 auto;
+}
+
+.top-charts {
+  margin: 5% auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  width: 45%;
+}
+
+.title h3 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.chart-icon {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.methodology {
+  margin: 5% auto;
+  padding-bottom: 2%;
+}
+
+.methodology p {
+  font-size: 12px;
+  color: #7f7f7f;
+}
+
+@media only screen and (max-width: 600px) {
+  .top-charts {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title {
+    text-align: center;
+    width: 85%;
+  }
+}
