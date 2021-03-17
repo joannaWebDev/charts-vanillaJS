@@ -50,18 +50,144 @@
       text-decoration: none;
     }
 
-    li a {
-      padding: 3%;
+    li a, table a {
+      text-decoration: none;
+      padding: 1%;
       background-color: #ffd23f;
       box-shadow: 2px 4px #888;
       border-radius: 5%;
       font-weight: 700;
     }
 
-    li a:hover {
+    li a:hover, table a :hover {
       box-shadow: 3px 8px #888;
       color: inherit;
     }
+
+    .responsive-table-input-matrix {
+      margin: 1em 0;
+      width: 100%;
+    }
+    h1 {
+      text-align: center;
+      color:#1b014c;
+    }
+
+    .table-section {
+      margin: 0 auto;
+      padding:0 5%;
+    }
+    @media (min-width: 480px) {
+      .responsive-table-input-matrix .responsive-table-input-matrix {
+        width: auto;
+      }
+    }
+
+    .responsive-table-input-matrix tr {
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .responsive-table-input-matrix tr td {
+      text-align: left;
+    }
+
+    @media (min-width: 480px) {
+      .responsive-table-input-matrix tr td {
+        text-align: center;
+      }
+    }
+
+    .responsive-table-input-matrix tr td:first-of-type {
+      text-align: left;
+    }
+
+    .responsive-table-input-matrix th {
+      display: none;
+    }
+
+    .responsive-table-input-matrix td {
+      display: block;
+    }
+
+    .responsive-table-input-matrix td:first-child {
+      padding-top: .5em;
+    }
+
+    .responsive-table-input-matrix td:last-child {
+      padding-bottom: .5em;
+    }
+
+    .responsive-table-input-matrix td:before {
+      content: attr(data-th) ": ";
+      font-weight: bold;
+      width: 9em;
+      display: inline-block;
+    }
+
+    @media (min-width: 480px) {
+      .responsive-table-input-matrix td:before {
+        display: none;
+      }
+    }
+
+    .responsive-table-input-matrix th:first-of-type {
+      text-align: left;
+    }
+
+    .responsive-table-input-matrix th,
+    .responsive-table-input-matrix td {
+      text-align: center;
+    }
+
+    @media (min-width: 480px) {
+
+      .responsive-table-input-matrix th,
+      .responsive-table-input-matrix td {
+        display: table-cell;
+        padding: .25em .5em;
+      }
+
+      .responsive-table-input-matrix th:first-child,
+      .responsive-table-input-matrix td:first-child {
+        padding-left: 0;
+      }
+
+      .responsive-table-input-matrix th:last-child,
+      .responsive-table-input-matrix td:last-child {
+        padding-right: 0;
+      }
+    }
+
+    .responsive-table {
+      background: #1b014c;
+      color: #fff;
+      border-radius: .4em;
+      overflow: hidden;
+    }
+
+    .responsive-table tr {
+      border-color: #1b014c;
+    }
+
+    .responsive-table th,
+    .responsive-table td {
+      margin: .5em 1em;
+    }
+
+    @media (min-width: 480px) {
+
+      .responsive-table th,
+      .responsive-table td {
+        padding: 1em !important;
+      }
+    }
+
+    .responsive-table th,
+    .responsive-table td:before {
+      color: #ffd23f;
+    }
+
 
     @media only screen and (max-width: 801px) {
       nav ul {
@@ -78,12 +204,83 @@
         alt="platformable logo with blue letters and blue square" width="228px"/></a>
     <nav>
       <ul>
+        <li><a href="./b_practices/b_practices.html">B_practices</a></li>
+        <li><a href="./c_table/c_table.html">C_table</a></li>
         <li><a href="./st_oas/st_oas.html">St_oas</a></li>
         <li><a href="./st_oas_by_category/st_oas_category.html">st_oas_by_category</a></li>
         <li><a href="./treemap/treemap.html">Treemap</a></li>
       </ul>
     </nav>
   </header>
+
+  <h1>CHARTS 2021</h1>
+
+  <div class="table-section">
+  <table class="responsive-table responsive-table-input-matrix">
+    <tr>
+      <th>CHART</th>
+      <th>Q1</th>
+      <th>Link</th>
+      <th>Q2</th>
+      <th>Link</th>
+      <th>Q3</th>
+      <th>Link</th>
+      <th>Q4</th>
+      <th>Link</th>
+    </tr>
+
+    <tr>
+      <td data-th="Name">B_practices</td>
+      <td data-th="Q1"><input type="checkbox" checked /></td>
+      <td data-th="Link"><span><a href="https://2021-quarterly-trends-reports.netlify.app/b_practices/b_practices.html" target="_blank">&#8680;</a></span></td>
+      <td data-th="Q2"><input type="checkbox" /></td>
+      <td data-th="Link"><span><a href="" target="_blank">&#8680;</a></span></td>
+      <td data-th="Q3"><input type="checkbox" /></td>
+      <td data-th="Link"><span><a href="" target="_blank">&#8680;</a></span></td>
+      <td data-th="Q4"><input type="checkbox" /></td>
+      <td data-th="Link"><span><a href="" target="_blank">&#8680;</a></span></td>
+    </tr>
+
+    <tr>
+      <td data-th="Name">C_table</td>
+      <td data-th="Q1"><input type="checkbox" checked /></td>
+      <td data-th="Link"><span><a href="https://2021-quarterly-trends-reports.netlify.app/c_table/c_table.html" target="_blank">&#8680;</a></span></td>
+      <td data-th="Q2"><input type="checkbox" /></td>
+      <td data-th="Link"><span><a href="" target="_blank">&#8680;</a></span></td>
+      <td data-th="Q3"><input type="checkbox" /></td>
+      <td data-th="Link"><span><a href="" target="_blank">&#8680;</a></span></td>
+      <td data-th="Q4"><input type="checkbox" /></td>
+      <td data-th="Link"><span><a href="" target="_blank">&#8680;</a></span></td>
+    </tr>
+
+    <tr>
+      <td data-th="Name">St_oas</td>
+      <td data-th="Q1"><input type="checkbox" checked /></td>
+      <td data-th="Link"><span><a href="https://2021-quarterly-trends-reports.netlify.app/st_oas/st_oas.html" target="_blank">&#8680;</a></span></td>
+      <td data-th="Q2"><input type="checkbox" /></td>
+      <td data-th="Link"><span><a href="" target="_blank">&#8680;</a></span></td>
+      <td data-th="Q3"><input type="checkbox" /></td>
+      <td data-th="Link"><span><a href="" target="_blank">&#8680;</a></span></td>
+      <td data-th="Q4"><input type="checkbox" /></td>
+      <td data-th="Link"><span><a href="" target="_blank">&#8680;</a></span></td>
+    </tr>
+
+    <tr>
+      <td data-th="Name">St_oas_by_category</td>
+      <td data-th="Q1"><input type="checkbox" checked /></td>
+      <td data-th="Link"><span><a href="https://2021-quarterly-trends-reports.netlify.app/st_oas_by_category/st_oas_by_category.html" target="_blank">&#8680;</a></span></td>
+      <td data-th="Q2"><input type="checkbox" /></td>
+      <td data-th="Link"><span><a href="" target="_blank">&#8680;</a></span></td>
+      <td data-th="Q3"><input type="checkbox" /></td>
+      <td data-th="Link"><span><a href="" target="_blank">&#8680;</a></span></td>
+      <td data-th="Q4"><input type="checkbox" /></td>
+      <td data-th="Link"><span><a href="" target="_blank">&#8680;</a></span></td>
+    </tr>
+
+  
+
+  </table>
+</div>
 </body>
 
 </html>
