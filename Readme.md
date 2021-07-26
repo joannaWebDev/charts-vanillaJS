@@ -64,4 +64,3 @@ CDN:
 https://charts-vanillajs.netlify.app
 ```
 
-test
